@@ -1,0 +1,63 @@
+// Imprimir las primeras 10 potencias de 2
+// plantee 3 versiones del argoritmo: miestras, hasta y para
+
+
+
+// version mientras
+Primeras10PotenciasUsandoMientras()
+
+Este algoritmo imprime por pantalla cada una de las primeras 10 potencias de 2 usando 
+la estructura de repeticion mientras y una funcion llamada pow la cual recibe por parametros 
+primero el numero que se va a elevar, y acontinuacion la potencia a la que se elevara 
+el numero y como resultado regresa ese valor de elevar ese numero a esa potencia.
+
+1.  entero potencia = 1
+2.  Mientras (potencia <= 10) repetir:
+        imprimir(pow(2,potencia))
+        potencia += 1
+    Fin-mientras
+
+
+        Prueba De Escritorio
+potencia        pantalla
+    1               2
+    2               4
+    3               8
+    4               16
+    5               32
+    6               64
+    7               128
+    8               256
+    9               512
+    10              1024
+
+
+
+// version hasta
+Primeras10PotenciasUsandoHasta()
+
+Este algoritmo imprime por pantalla cada una de las primeras 10 potencias de 2 usando 
+la estructura de repeticion hasta y una funcion llamada pow la cual recibe por parametros 
+primero el numero que se va a elevar, y acontinuacion la potencia a la que se elevara 
+el numero y como resultado regresa ese valor de elevar ese numero a esa potencia.
+
+1.  entero potencia = 1
+2.  Repetir:
+        imprimir(pow(2,potencia))
+        potencia += 1
+    Hasta (potencia > 10)
+
+
+
+// version para
+Primeras10PotenciasUsandoPara()
+
+Este algoritmo imprime por pantalla cada una de las primeras 10 potencias de 2 usando 
+la estructura de repeticion para y una funcion llamada pow la cual recibe por parametros 
+primero el numero que se va a elevar, y acontinuacion la potencia a la que se elevara 
+el numero y como resultado regresa ese valor de elevar ese numero a esa potencia.
+
+1.  Para potencia = 1, 10, 1 repetir:
+        imprimir(pow(2,potencia))
+
+
