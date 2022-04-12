@@ -13,7 +13,7 @@ la estructura de repeticion mientras
 2.  Mientras (potencia <= 10) repetir:
         respuesta *= 2
         imprimir(respuesta)
-        potencia += 1
+        potencia++
     Fin-mientras
 
 
@@ -43,7 +43,7 @@ la estructura de repeticion hasta
 2.  Repetir:
         respuesta *= 2
         imprimir(respuesta)
-        potencia += 1
+        potencia++
     Hasta (potencia > 10)
 
 
@@ -91,3 +91,31 @@ potencia    respuesta    pantalla
     11
 
 
+
+--------------------------------------------------------------------------------
+
+// un valor numerico que entre por teclado sera almacenado en NUM
+// hay que imprimir la cantidad de multiplos de 2, 3, 4 y 5
+// del 1 a NUM
+
+CantidadMultiplosDe2345()
+1.  entero NUM, multiplos2 = 0, multiplos3 = 0, multiplos4 = 0, multiplos5 = 0
+2.  leer(NUM)
+3.  para i = 1, NUM, 1 repetir:
+        si (i % 2 == 0)
+            multiplos2++
+        fin-si
+        si (i % 3 == 0)
+            multiplos3++
+        fin-si
+        si (i % 4 == 0)
+            multiplos4++
+        fin-si
+        si (i % 5 == 0)
+            multiplos5++
+        fin-si
+    fin-para
+    imprimir("Cantidad de Multiplos de 2 = " + multiplos2)
+    imprimir("Cantidad de Multiplos de 3 = " + multiplos3)
+    imprimir("Cantidad de Multiplos de 4 = " + multiplos4)
+    imprimir("Cantidad de Multiplos de 5 = " + multiplos5)
