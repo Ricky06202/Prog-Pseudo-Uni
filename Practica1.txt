@@ -7,33 +7,29 @@
 Primeras10PotenciasUsandoMientras()
 
 Este algoritmo imprime por pantalla cada una de las primeras 10 potencias de 2 usando 
-la estructura de repeticion mientras y una funcion llamada pow la cual recibe por parametros 
-primero el numero que se va a elevar, y acontinuacion la potencia a la que se elevara 
-el numero y como resultado regresa ese valor de elevar ese numero a esa potencia.
+la estructura de repeticion mientras
 
-1.  entero potencia = 1
+1.  entero potencia = 1, respuesta = 1
 2.  Mientras (potencia <= 10) repetir:
-        entero i = 1, resultado = 1
-        Mientras (i <= potencia) repetir:
-            resultado *= 2
-            i += 1
-        imprimir(pow(2,potencia))
+        respuesta *= 2
+        imprimir(respuesta)
         potencia += 1
     Fin-mientras
 
 
-  Prueba De Escritorio
-potencia        pantalla
-    1               2
-    2               4
-    3               8
-    4               16
-    5               32
-    6               64
-    7               128
-    8               256
-    9               512
-    10              1024
+       Prueba De Escritorio
+potencia    respuesta    pantalla
+    1           2           2
+    2           4           4
+    3           8           8
+    4           16          16
+    5           32          32
+    6           64          64
+    7           128         128
+    8           256         256
+    9           512         512
+    10          1024        1024
+    11
 
 
 
@@ -41,29 +37,29 @@ potencia        pantalla
 Primeras10PotenciasUsandoHasta()
 
 Este algoritmo imprime por pantalla cada una de las primeras 10 potencias de 2 usando 
-la estructura de repeticion hasta y una funcion llamada pow la cual recibe por parametros 
-primero el numero que se va a elevar, y acontinuacion la potencia a la que se elevara 
-el numero y como resultado regresa ese valor de elevar ese numero a esa potencia.
+la estructura de repeticion hasta 
 
-1.  entero potencia = 1
+1.  entero potencia = 1, respuesta = 1
 2.  Repetir:
-        imprimir(pow(2,potencia))
+        respuesta *= 2
+        imprimir(respuesta)
         potencia += 1
     Hasta (potencia > 10)
 
 
-  Prueba De Escritorio
-potencia        pantalla
-    1               2
-    2               4
-    3               8
-    4               16
-    5               32
-    6               64
-    7               128
-    8               256
-    9               512
-    10              1024
+       Prueba De Escritorio
+potencia    respuesta    pantalla
+    1           2           2
+    2           4           4
+    3           8           8
+    4           16          16
+    5           32          32
+    6           64          64
+    7           128         128
+    8           256         256
+    9           512         512
+    10          1024        1024
+    11
 
 
 
@@ -71,25 +67,27 @@ potencia        pantalla
 Primeras10PotenciasUsandoPara()
 
 Este algoritmo imprime por pantalla cada una de las primeras 10 potencias de 2 usando 
-la estructura de repeticion para y una funcion llamada pow la cual recibe por parametros 
-primero el numero que se va a elevar, y acontinuacion la potencia a la que se elevara 
-el numero y como resultado regresa ese valor de elevar ese numero a esa potencia.
+la estructura de repeticion para 
 
-1.  Para potencia = 1, 10, 1 repetir:
-        imprimir(pow(2,potencia))
+1.  entero respuesta = 1
+2.  Para potencia = 1, 10, 1 repetir:
+        respuesta *= 2
+        imprimir(respuesta)
+    Fin-para
 
 
-  Prueba De Escritorio
-potencia        pantalla
-    1               2
-    2               4
-    3               8
-    4               16
-    5               32
-    6               64
-    7               128
-    8               256
-    9               512
-    10              1024
+       Prueba De Escritorio
+potencia    respuesta    pantalla
+    1           2           2
+    2           4           4
+    3           8           8
+    4           16          16
+    5           32          32
+    6           64          64
+    7           128         128
+    8           256         256
+    9           512         512
+    10          1024        1024
+    11
 
 
