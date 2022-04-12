@@ -13,6 +13,10 @@ el numero y como resultado regresa ese valor de elevar ese numero a esa potencia
 
 1.  entero potencia = 1
 2.  Mientras (potencia <= 10) repetir:
+        entero i = 1, resultado = 1
+        Mientras (i <= potencia) repetir:
+            resultado *= 2
+            i += 1
         imprimir(pow(2,potencia))
         potencia += 1
     Fin-mientras
