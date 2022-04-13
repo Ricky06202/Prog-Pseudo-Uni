@@ -19,17 +19,17 @@ la estructura de repeticion mientras
 
        Prueba De Escritorio
 potencia    respuesta    pantalla
-    1           2           2
-    2           4           4
-    3           8           8
-    4           16          16
-    5           32          32
-    6           64          64
-    7           128         128
-    8           256         256
-    9           512         512
-    10          1024        1024
-    11
+    1           1*2         2
+    2           2*2         4
+    3           4*2         8
+    4           8*2         16
+    5           16*2        32
+    6           32*2        64
+    7           64*2        128
+    8           128*2       256
+    9           256*2       512
+    10          512*2       1024
+    11			1024		
 
 
 
@@ -49,17 +49,17 @@ la estructura de repeticion hasta
 
        Prueba De Escritorio
 potencia    respuesta    pantalla
-    1           2           2
-    2           4           4
-    3           8           8
-    4           16          16
-    5           32          32
-    6           64          64
-    7           128         128
-    8           256         256
-    9           512         512
-    10          1024        1024
-    11
+    1           1*2         2
+    2           2*2         4
+    3           4*2         8
+    4           8*2         16
+    5           16*2        32
+    6           32*2        64
+    7           64*2        128
+    8           128*2       256
+    9           256*2       512
+    10          512*2       1024
+    11			1024		
 
 
 
@@ -78,17 +78,17 @@ la estructura de repeticion para
 
        Prueba De Escritorio
 potencia    respuesta    pantalla
-    1           2           2
-    2           4           4
-    3           8           8
-    4           16          16
-    5           32          32
-    6           64          64
-    7           128         128
-    8           256         256
-    9           512         512
-    10          1024        1024
-    11
+    1           1*2         2
+    2           2*2         4
+    3           4*2         8
+    4           8*2         16
+    5           16*2        32
+    6           32*2        64
+    7           64*2        128
+    8           128*2       256
+    9           256*2       512
+    10          512*2       1024
+    11			1024		
 
 
 
@@ -227,7 +227,7 @@ NUM     i     multiplos2      multiplos3      multiplos4      multiplos5      pa
 100     98      49              32              24              19
 100     99      49              33              24              19
 100     100     50              33              25              20    
-100     101                                                             Cantidad de Multiplos de 2 = 50
+100     101     50              33              25              20      Cantidad de Multiplos de 2 = 50
                                                                         Cantidad de Multiplos de 3 = 33
                                                                         Cantidad de Multiplos de 4 = 25
-                                                                        Cantidad de Multiplos de 5 = 20
+																		Cantidad de Multiplos de 5 = 20
