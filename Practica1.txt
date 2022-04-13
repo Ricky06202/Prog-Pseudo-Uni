@@ -226,7 +226,8 @@ NUM     i     multiplos2      multiplos3      multiplos4      multiplos5      pa
 100     97      48              32              24              19
 100     98      49              32              24              19
 100     99      49              33              24              19
-100     100     50              33              25              20    Cantidad de Multiplos de 2 = 50
-                                                                      Cantidad de Multiplos de 3 = 33
-                                                                      Cantidad de Multiplos de 4 = 25
-                                                                      Cantidad de Multiplos de 5 = 20
+100     100     50              33              25              20    
+100     101                                                             Cantidad de Multiplos de 2 = 50
+                                                                        Cantidad de Multiplos de 3 = 33
+                                                                        Cantidad de Multiplos de 4 = 25
+                                                                        Cantidad de Multiplos de 5 = 20
