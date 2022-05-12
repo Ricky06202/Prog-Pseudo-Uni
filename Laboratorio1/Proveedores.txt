@@ -2,17 +2,19 @@ AlgoritmoDeActualizacionDeProveedores
 Este algoritmo permite realizar operaciones de actualizacion a los proveedores de la empreza RICKYS TECNOLOGY S.A.
 
 1.[declaramos las variables]
-proveedores, ciudad = arreglo[1..20] de cadenas
-articulos = arreglo[1..20] de enteros
-tamañoActual = 0, opcionSeleccionada : enteros
+proveedor, ciudad = arreglo[1..20] de cadenas
+articulo = arreglo[1..20] de enteros
+tamañoActual = 0, tamañoMaximo = 20, opcion : enteros
 terminar = falso : booleano
+nomProveedor : cadena
 
 2.[se despliega el menu y hacemos un ciclo hasta que el usuario elija la opcion de salir]
 Mientras (terminar = falso) repetir:
     LlamarA imprimirMenu()
-    opcionSeleccionada = LlamarA seleccionarOpcion()
-    CasoDe(opcionSeleccionada):
-        1:
+    opcion = LlamarA seleccionarOpcion()
+    CasoDe(opcion):
+        1:  LlamarA imprimirMenu()
+            nomProveedor = LlamarA ingresarProveedor("CONSULTA A PROVEEDOR")
 
 Funcion imprimirTitulos()
     Escribir("COMPAÑIA RICKYS TECNOLOGY S.A.")
@@ -35,5 +37,40 @@ Funcion seleccionarOpcion()
     Leer(opcion)
     regresar opcion
 
+Funcion ingresarProveedor(texto)
+    nomProveedor : cadena
+    Escribir (texto)
+    Escribir (“Nombre del Proveedor: ”)
+    Leer (nomProveedor)
+    regresar nomProveedor
 
+Funcion ColsultaProveedor(proveedor,ciudad, articulo, tamañoActual, nomProveedor)
+    1.[declaramos las variables]
+    pos = 1 : entero
+    2.[se busca el proveedor en la tabla de proveedores]
+    Mientras(pos <= tamañoActual y proveedor[pos] < nomProveedor) repetir:
+        pos += 1
+    Fin-Mientras
+    3.[Se verifica si se encontro el proveedor]
+    Si(pos > tamañoActual o proveedor[pos] > nomProveedor) entonces:
+        Escribir("EL PROVEEDOR NO EXISTE")
+    Si no
+        Escribir("Ciudad donde reside: ", ciudad[pos])
+        Escribir("Numero de articulos: ", articulo[pos])
+    Fin-Si
+    4.regresar
+
+Funcion buscarOrdenado(proveedor, tamañoActual, nomProveedor)
+    1.[declaramos las variables]
+    pos = 1 : entero
+    2.[se busca el proveedor en la tabla de proveedores]
+    Mientras(pos <= tamañoActual y proveedor[pos] < nomProveedor) repetir:
+        pos += 1
+    Fin-Mientras
+    3.[Verificamos si se encontro el proveedor]
+    Si(pos > tamañoActual o proveedor[pos] > nomProveedor) entonces:
+        pos *= -1
+    Fin-Si
+    4.regresar pos
+    
 
