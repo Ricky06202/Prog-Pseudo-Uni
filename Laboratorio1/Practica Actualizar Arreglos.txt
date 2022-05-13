@@ -1,0 +1,222 @@
+AlgoritmoDeActualizacionDeProveedores
+Este algoritmo permite realizar operaciones de actualizacion a los proveedores de la empreza RICKYS TECNOLOGY S.A.
+
+1.[declaramos las variables]
+proveedor, ciudad = arreglo[1..20] de cadenas
+articulo = arreglo[1..20] de enteros
+tamañoActual = 0, tamañoMaximo = 20, opcion : enteros
+terminar = falso : booleano
+
+2.[se despliega el menu y hacemos un ciclo hasta que el usuario elija la opcion de salir]
+Mientras (terminar = falso) repetir:
+    LlamarA imprimirMenu()
+    opcion = LlamarA seleccionarOpcion()
+    CasoDe(opcion):
+        1:  LlamarA consultarProveedor(proveedor,ciudad,articulo,tamañoActual)
+        2:  LlamarA modificarLaCiudad(proveedor,ciudad,tamañoActual)
+        3:  LlamarA modificarLosArticulos(proveedor,articulo,tamañoActual)
+        4:  tamañoActual = LlamarA insertarProveedor(proveedor,ciudad, articulo, tamañoActual)
+        5:  tamañoActual = LlamarA eliminarProveedor(proveedor,ciudad, articulo, tamañoActual)
+        6:  terminar = verdadero
+    Fin-Caso
+Fin-Mientras
+3.Fin
+
+Funcion imprimirTitulos()
+Esta funcion se encarga de imprimir los encabezados
+    1.[imprimos los encabezados]
+    Escribir("COMPAÑIA RICKYS TECNOLOGY S.A.")
+    Escribir("SISTEMA DE MANEJO DE PROOVEDORES")
+    2.regresar
+
+Funcion imprimirMenu()
+Esta funcion se encarga de imprimir el menu principal
+    1.[imprimimos los encabezados]
+    LlamarA imprimirTitulos()
+    2.[imprimimos el menu de opciones]
+    Escribir("1) Consultar Proveedor")
+    Escribir("2) Modificar Ciudad")
+    Escribir("3) Modificar Articulos")
+    Escribir("4) Insertar Proveedor")
+    Escribir("5) Eliminar Proveedor")
+    Escribir("6) Salir")
+    3.regresar
+
+Funcion seleccionarOpcion()
+Esta funcion se encarga de pedirle al usuario q ingrese la opcion q va a seleccionar
+    1.[declaramos las variables]
+    opcion : entero
+    2.[leemos la opcion]
+    Escribir("Ingrese una opcion: ")
+    Leer(opcion)
+    3.regresar opcion
+
+Funcion ingresarProveedor(texto)
+Esta funcion se encarga de pedirle al usuario que ingrese el proveedor
+    1.[declaramos las variables]
+    nomProveedor : cadena
+    2.[Leemos el proveedor]
+    Escribir (texto)
+    Escribir (“Nombre del Proveedor: ”)
+    Leer (nomProveedor)
+    3.regresar nomProveedor
+
+Funcion consultarProveedor(proveedor,ciudad, articulo, tamañoActual)
+Esta funcion se encarga de  desplegar al proveedor consultado mostrando
+sus datos por pantalla. en caso de no encontrarlo se envia un mensaje de error
+se usa el metodo de busqueda en arreglos ordenados para realizar la consulta
+    1.[declaramos las variables]
+    pos = 1 : entero
+    nomProveedor : cadena
+    2.[imprimos los titulos y llamamos a la funcion para ingresar el proveedor]
+    LlamarA imprimirTitulos()
+    nomProveedor = LlamarA ingresarProveedor("CONSULTAR A PROVEEDOR")
+    3.[se busca el proveedor en la tabla de proveedores]
+    Mientras(pos <= tamañoActual y proveedor[pos] < nomProveedor) repetir:
+        pos += 1
+    Fin-Mientras
+    4.[Se verifica si se encontro el proveedor]
+    Si(pos > tamañoActual o proveedor[pos] > nomProveedor) entonces:
+        Escribir("EL PROVEEDOR NO EXISTE")
+    Si no
+        Escribir("Ciudad donde reside: ", ciudad[pos])
+        Escribir("Numero de articulos: ", articulo[pos])
+    Fin-Si
+    5.regresar
+
+Funcion buscarOrdenado(proveedor, tamañoActual, nomProveedor)
+Esta funcion busca a un proveedor en el arreglo ordenado proveedor.
+la variable tamañoActual nos indica el numero de elementos que tiene el arreglo
+pos es la variable que nos ayudara a encontrar al proveedor y regresarlo
+asumimos que no hay valores repetidos en el arreglo
+    1.[declaramos las variables]
+    pos = 1 : entero
+    2.[se busca el proveedor en la tabla de proveedores]
+    Mientras(pos <= tamañoActual y proveedor[pos] < nomProveedor) repetir:
+        pos += 1
+    Fin-Mientras
+    3.[Verificamos si se encontro el proveedor]
+    Si(pos > tamañoActual o proveedor[pos] > nomProveedor) entonces:
+        pos *= -1
+    Fin-Si
+    4.regresar pos
+
+Funcion modificarLaCiudad(proveedor,ciudad,tamañoActual)
+Esta funcion permite modificar la ciudad donde recide un proveedor
+mostrando si existe  o no el proveedor al que se le quiere cambiar 
+la recidencia y asi poder remplazar su valor en el arreglo ciudad
+    1.[declaramos las variables]
+    pos : entero
+    nuevaCiudad, nomProveedor : cadena
+    2.[imprimos los titulos y llamamos a la funcion para ingresar el proveedor]
+    LlamarA imprimirTitulos()
+    nomProveedor = LlamarA ingresarProveedor("MODIFICAR LA CIUDAD")
+    3.[invocamos a la funcion para busqueda en arreglos ordenados]
+    pos = LlamarA buscarOrdenado(proveedor,tamañoActual,nomProveedor)
+    4.[verificamos si se encontro el proveedor]
+    Si (pos < 0) entonces:
+        Escribir("EL PROVEEDOR NO EXISTE")
+    Si no
+        Escribir("Ciudad donde reside: ", ciudad[pos])
+        Escribir("Ingrese la nueva Ciudad: ")
+        Leer(nuevaCiudad)
+        ciudad[pos] = nuevaCiudad
+        Escribir("Nueva residencia: ", ciudad[pos])
+    Fin-Si
+    5.regresar
+
+Funcion modificarLosArticulos(proveedor,articulo,tamañoActual)
+Esta funcion nos permite aumentar o disminuir al cantidad de articulos
+que posee un proveedor, permitiendo la entrada de valores positivos o negativos
+segun sea la ocacion, para luego modificarlo en el arreglo articulo
+    1.[declaramos las variables]
+    pos, cantidad : entero
+    nomProveedor : cadena
+    2.[imprimos los titulos y llamamos a la funcion para ingresar el proveedor]
+    LlamarA imprimirTitulos()
+    nomProveedor = LlamarA ingresarProveedor("MODIFICAR LOS ARTICULOS")
+    3.[invocamos a la funcion para busqueda en arreglos ordenados]
+    pos = LlamarA buscarOrdenado(proveedor, tamañoActual, nomProveedor)
+    4.[verificamos si se encontro el proveedor]
+    Si (pos < 0) entonces:
+        Escribir("EL PROVEEDOR NO EXISTE")
+    Si no
+        Escribir("Cantidad actual de articulos: ", articulo[pos])
+        Escribir("Ingrese la cantidad a aumentar o disminuir: ")
+        Leer(cantidad)
+        articulo[pos] += cantidad
+        Escribir("Cantidad actualizada de articulos: ", articulo[pos])
+    Fin-Si
+    5.regresar
+
+Funcion insertarProveedor(proveedor,ciudad, articulo, tamañoActual)
+Esta funcion permite insertar un proveedor, en el arreglo proveedor.
+si ya existe se muestra un error y si no entonces procedemos a solicitar
+su direccion  y numero de articulos para poder insertarlo al arreglo
+primero desplazando los elementos del arreglo a la derecha para abrir espacio
+al nuevo proveedor
+    1.[declaramos las variables]
+    contador = 1, pos, cantidad : entero
+    nuevaCiudad, nomProveedor: cadena
+    2.[preguntamos si hay espacio]
+    Si(tamañoActual>tamañoMaximo)
+        Escribir("El arreglo esta lleno, no se permiten inserciones")
+        regresar tamañoActual
+    3.[imprimos los titulos y llamamos a la funcion para ingresar el proveedor]
+    LlamarA imprimirTitulos()
+    nomProveedor = LlamarA ingresarProveedor("INSERTAR UN PROVEEDOR")
+    4.[invocamos a la funcion para busqueda en arreglos ordenados]
+    pos = LlamarA buscarOrdenado(proveedor, tamañoActual, nomProveedor)
+    5.[verificamos si se encontro el proveedor]
+    Si (pos > 0) entonces:
+        Escribir("EL PROVEEDOR YA EXISTE")
+    Si no 
+        Escribir("Ingrese la ciudad donde reside: ")
+        Leer(nuevaCiudad)
+        Escribir("Ingrese la cantidad de articulos: ")
+        Leer(cantidad)
+        tamañoActual += 1
+        pos *= -1
+        Para contador = tamañoActual, pos + 1, -1 repetir:
+            proveedor[contador] = proveedor[contador - 1]
+            ciudad[contador] = ciudad[contador - 1]
+            articulo[contador] = articulo[contador - 1]
+        Fin-Para
+        proveedor[pos] = nomProveedor
+        ciudad[pos] = nuevaCiudad
+        articulo[pos] = cantidad
+        Escribir("Nuevo Proveedor Registrado con Exito!!")
+    Fin-Si
+    6.regresar tamañoActual
+
+Funcion eliminarProveedor(proveedor,ciudad, articulo, tamañoActual)
+Esta funcion permite eliminar un proveedor del arreglo proveedor y toda la 
+informacion relacionada con el en los arreglos ciudad y articulo, si el proveedor
+no existe se manda un error pero si existe, procedemos a movilizar los proveedores
+a la derecha del proveedor que se desea eliminar una casilla a la izquierda
+    1.[declaramos las variables]
+    contador = 1, pos : entero
+    nomProveedor : cadena
+    2.[preguntamos si hay algun proveedor]
+    Si(tamañoActual <= 0)
+        Escribir("El arreglo esta vacio, no se permiten eliminaciones")
+        regresar tamañoActual
+    3.[imprimos los titulos y llamamos a la funcion para ingresar el proveedor]
+    LlamarA imprimirTitulos()
+    nomProveedor = LlamarA ingresarProveedor("ELIMINAR UN PROVEEDOR")
+    4.[invocamos a la funcion para busqueda en arreglos ordenados]
+    pos = LlamarA buscarOrdenado(proveedor, tamañoActual, nomProveedor)
+    5.[verificamos si se encontro el proveedor]
+    Si (pos < 0)
+        Escribir("EL PROVEEDOR NO EXISTE")
+    Si no
+        tamañoActual -= 1
+        Para contador = pos, tamañoActual, 1 repetir:
+            proveedor[contador] = proveedor[contador + 1]
+            ciudad[contador] = ciudad[contador + 1]
+            articulo[contador] = articulo[contador + 1]
+        Fin-Para
+    Fin-Si
+    6.regresar tamañoActual
+    
+
