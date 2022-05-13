@@ -1,3 +1,5 @@
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 ---AlgoritmoDeActualizacionDeProveedores---
 Este algoritmo permite realizar operaciones de actualizacion a los proveedores de la empreza RICKYS TECNOLOGY S.A.
 
@@ -219,6 +221,7 @@ a la derecha del proveedor que se desea eliminar una casilla a la izquierda
     Fin-Si
     6.regresar tamañoActual
     
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ---AlgoritmoDeMultiplicacionDeMatrices---
 este algoritmo permite la multiplicacion de matrices
@@ -286,6 +289,7 @@ el resultado lo vamos almacenando en la matriz resultado
     LlamarA mostrarMatriz(resultado)
     4.regresar
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ---AlgoritmoDeIntercalacionOrdenada---
 En este algoritmo vamos a desarrollar una funcion que intercale 2 arreglos de cadenas
