@@ -1,4 +1,4 @@
-AlgoritmoDeActualizacionDeProveedores
+---AlgoritmoDeActualizacionDeProveedores---
 Este algoritmo permite realizar operaciones de actualizacion a los proveedores de la empreza RICKYS TECNOLOGY S.A.
 
 1.[declaramos las variables]
@@ -220,3 +220,91 @@ a la derecha del proveedor que se desea eliminar una casilla a la izquierda
     6.regresar tamañoActual
     
 
+---AlgoritmoDeMultiplicacionDeMatrices---
+este algoritmo permite la multiplicacion de matrices
+
+1.[declaramos las variables]
+filasDelPrimero, columnasYFilasQueComparten, columnasDelSegundo : entero
+2.[pedimos que se ingresen las medidas]
+Escribir("Para realizar una multiplicacion de matrices ingrese")
+Escribir("Las Filas de la primera matriz: ")
+Leer(filasDelPrimero)
+Escribir("Las Columnas de la primera matriz que son iguales a las filas de la segunda matriz: ")
+Leer(columnasYFilasQueComparten)
+Escribir("Las Columnas de la segunda matriz")
+Leer(columnasDelSegundo)
+3.[declaramos las matrices]
+primeraMatriz = arreglo[1..filasDelPrimero][1..columnasYFilasQueComparten] de enteros
+segundaMatriz = arreglo[1..columnasYFilasQueComparten][1..columnasDelSegundo] de enteros
+4.[llenamos las matrices de numeros aleatorios]
+LlamarA llenarMatricesConNumerosAleatorios(primeraMatriz)
+LlamarA llenarMatricesConNumerosAleatorios(segundaMatriz)
+5.[procedemos a multiplicarlas y a mostrar su resultado]
+LlamarA multiplicacionDeMatrices(primeraMatriz,segundaMatriz,filasDelPrimero, columnasYFilasQueComparten, columnasDelSegundo)
+6.Fin
+
+Funcion llenarMatricesConNumerosAleatorios(matriz)
+esta funcion nos permite llenar la matriz con numeros aleatorios
+    1.[declaramos las variables]
+    fila, columna : entero
+    2.[vamos casilla a casilla colocando numeros aleatorios]
+    Para fila = 1, longitud(matriz), 1 repetir:
+        Para columna = 1, longitud(matriz[0]), 1 repetir:
+            matriz[fila][columna] = enteroAleatorio()
+        Fin-Para
+    Fin-Para
+    3.regresar
+
+Funcion mostrarMatriz(matriz)
+esta funcion nos permite mostrar la matriz por pantalla
+    1.[declaramos las variables]
+    fila, columna : entero
+    2.[imprimimos el arreglo]
+    Para fila = 1, longitud(matriz), 1 repetir:
+        Para columna = 1, longitud(matriz[0]), 1 repetir:
+            Escribir(matriz[fila][columna]," ")
+        Fin-Para
+        Escribir("")
+    Fin-Para
+    3.regresar
+
+Funcion multiplicacionDeMatrices(matriz1,matriz2,filasDelPrimero, columnasYFilasQueComparten, columnasDelSegundo)
+en esta funcion multiplicamos las filas de la primera matriz por las columnas de la segunda y 
+el resultado lo vamos almacenando en la matriz resultado
+    1.[declaramos las variables]
+    fila, columna, auxiliar : entero
+    resultado = arreglo[1..filasDelPrimero][1..columnasDelSegundo] de enteros
+    2.[realizamos la multiplicacion]
+    Para fila = 1, filasDelPrimero, 1 repetir:
+        Para columna = 1, columnasDelSegundo, 1 repetir:
+            Para auxiliar = 1, columnasYFilasQueComparten, 1 repetir:
+                resultado[fila][columna] += matriz1[fila][auxiliar] * matriz2[auxiliar][columna]
+            Fin-Para
+        Fin-Para
+    Fin-Para
+    3.[mostramos el resultado]
+    LlamarA mostrarMatriz(resultado)
+    4.regresar
+
+
+---AlgoritmoDeIntercalacionOrdenada---
+En este algoritmo vamos a desarrollar una funcion que intercale 2 arreglos de cadenas
+
+Funcion IntercalacionOrdenada(teatros, museos)
+en esta funcion vamos a ir intercalando los valores de cadena que contengan los arreglos teatros y museos 
+para ir colocandolos alfabeticamente en el arreglo de entretenimientos, el cual sera regresado por esta funcion.
+    1.[declaramos las variables]
+    entretenimiento = arreglo[1..longitud(teatros)+longitud(museos)] de cadenas
+    t = 1, m = longitud(museos), e = 1 : entero 
+    2.[intercalamos el arreglo de teatros con el de museos ordenadamente]
+    Mientras(e <= longitud(entretenimiento)) repetir:
+        Si (teatros[t] < museos[m]) entonces:
+            entretenimiento[e] = teatros[t]
+            t += 1
+        sino
+            entretenimiento[e] = museos[m]
+            m -= 1
+        Fin-Si
+        e += 1
+    Fin-Mientras
+    3.regresar entretenimiento
